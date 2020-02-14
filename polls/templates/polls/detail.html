@@ -1,0 +1,17 @@
+{% extends 'polls/index.html' %}
+{% block content %}
+
+<div class="text-center">
+<h1 class="display-1">{{ question.question_text }}</h1>
+<p>
+{% for choice in question.choice_set.all %}
+    <div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline{{ choice.id }}" name="customRadioInline" class="custom-control-input">
+  <label class=" custom-control-label" for="customRadioInline{{ choice.id }}">{{ choice.choice_text }}</label>
+</div>
+{% endfor %}
+</p>
+</div>
+{% endblock content %}
+
+
